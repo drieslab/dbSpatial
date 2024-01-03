@@ -1,0 +1,11 @@
+^spaceduck\.Rproj$
+^\.Rproj\.user$
+^README\.Rmd$
+^\.github$
+.readthedocs.yaml
+^docs/
+^doc$
+^Meta$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$
