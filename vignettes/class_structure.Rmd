@@ -1,0 +1,29 @@
+---
+title: "Class Structure"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Class Structure}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+
+# Class Structure
+The `{dbSpatial}` package contains convenience functions for working with diverse spatial file formats through the duckdb spatial extension, as well as functions for IO of spatial `{terra}` spatVector and spatRaster objects into a duckdb db.
+
+For more information about duckdb spatial extension see [the duckdb spatial extension](https://duckdb.org/docs/extensions/spatial.html).
+
+For more information about loading multiple geospatial files into duckdb, see the [duckdbfs package](https://github.com/cboettig/duckdbfs).
+
+[![](https://mermaid.ink/img/pako:eNp9Ul1rwkAQ_CvHPrU0pvlQo0fxyddCUWihBMomWfUkuQt3J9QG_3svSaumtL2Xy-xMZm-HbSBXBQGHvERjlgK3GqtUplJiRabGnNgSLbKmrTF3Oh1zjBVYvm1ESabpmfbcMd_s6gHektobJQc13-_haeiqv21VtqfcDo0taY2ct5JnRyr9B7lC49CV_2k4TpF9dylFxprr_kW27qlB41xJyVkmJOrjpT46Z1BrVZO2gszN7blte_1q_aSE7Cb7NYErWXncKjkQdtpB8uzB9xeXnzhbERb3L1pYSuXPNP8Vn8tsNFr8fO0_dP9K8KAiXaEo3CZ14aVgd1RRCtx9FrTBQ2lTcDM4KR6sWh9lDnyDpSEPDnWBlr6W71ytUb4q5bDVhx4Cb-AdeJgEfhgl0XwcxLNxNJ1PPDgCnyR-PJ0G4yiZzGZhEEcnDz46g8BPwnkYTpNxEifzOIg9oEK4FXr82v32On0CvVb7eA?type=png)](https://mermaid.live/edit#pako:eNp9Ul1rwkAQ_CvHPrU0pvlQo0fxyddCUWihBMomWfUkuQt3J9QG_3svSaumtL2Xy-xMZm-HbSBXBQGHvERjlgK3GqtUplJiRabGnNgSLbKmrTF3Oh1zjBVYvm1ESabpmfbcMd_s6gHektobJQc13-_haeiqv21VtqfcDo0taY2ct5JnRyr9B7lC49CV_2k4TpF9dylFxprr_kW27qlB41xJyVkmJOrjpT46Z1BrVZO2gszN7blte_1q_aSE7Cb7NYErWXncKjkQdtpB8uzB9xeXnzhbERb3L1pYSuXPNP8Vn8tsNFr8fO0_dP9K8KAiXaEo3CZ14aVgd1RRCtx9FrTBQ2lTcDM4KR6sWh9lDnyDpSEPDnWBlr6W71ytUb4q5bDVhx4Cb-AdeJgEfhgl0XwcxLNxNJ1PPDgCnyR-PJ0G4yiZzGZhEEcnDz46g8BPwnkYTpNxEifzOIg9oEK4FXr82v32On0CvVb7eA)
+
+
+
+

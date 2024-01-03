@@ -1,0 +1,165 @@
+---
+title: "Spatial Operations"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Spatial Operations}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+# Spatial Operations with {terra} Comparisons
+
+```{r setup}
+# load libs
+library(dbSpatial)
+library(terra)
+library(dplyr)
+library(magrittr) # remove once import %>%
+```
+
+## Create test data
+```{r}
+# Create a data.frame with x and y coordinates and attributes
+coordinates <- data.frame(x = 1:1e6, y = 1:1e6)
+attributes <- data.frame(id = 1:1e6, name = paste("A", 1:1e6, sep = "_"))
+
+# Combine the coordinates and attributes
+dummy_data <- cbind(coordinates, attributes)
+
+# Create a SpatVector from the data.frame
+dummy_spatvector <- terra::vect(dummy_data, geom = c("x", "y"))
+
+# DuckDB
+duckdb_conn = DBI::dbConnect(duckdb::duckdb(), ":memory:")
+
+db_points = createDbSpatPoints(conn = duckdb_conn,
+                               tbl = "spatVector_proxy",
+                               data = dummy_spatvector,
+                               overwrite = TRUE)
+```
+
+
+### Extent
+```{r}
+# terra
+library(tictoc)
+
+tic()
+terra::ext(dummy_spatvector)
+toc()
+
+# dbSpatial
+tic()
+dbSpatial::ST_Extent(tbl = db_points)
+toc()
+```
+
+### Shift
+```{r}
+# terra
+terra::geom(dummy_spatvector)
+
+tic()
+shifted_spatVector = terra::shift(dummy_spatvector, dx = 10, dy = 10)
+toc()
+
+terra::geom(shifted_spatVector)
+
+# dbSpatial
+tic()
+dbSpatial::ST_Translate(tbl = db_points, dx = 10, dy = 10) %>%
+  mutate(points = ST_AsText(geom)) %>%
+  select(points) %>%
+  compute(temporary = FALSE)
+toc()
+```
+
+### Flip
+```{r}
+# terra
+terra::geom(dummy_spatvector)
+
+flipped_spatVector = terra::flip(dummy_spatvector, direction = "vertical")
+
+terra::geom(flipped_spatVector)
+
+# <----- not equivalent to terra::flip ------>
+# dbSpatial
+# db_points %>%
+#   mutate(points = ST_AsText(geom))
+# 
+# db_points %>%
+#   mutate(flipped_points = ST_AsText(ST_FlipCoordinates(geom)))
+
+```
+
+### Is.Valid
+```{r}
+# terra
+terra::geom(dummy_spatvector)
+
+terra::is.valid(dummy_spatvector)
+
+# dbSpatial
+db_points %>%
+  mutate(points = ST_AsText(geom)) %>%
+  select(points)
+
+dbSpatial::ST_IsValid(tbl = db_points)
+```
+
+
+### Y, X Max
+```{r}
+# terra
+terra::geom(dummy_spatvector)
+
+tic()
+terra::ymax(dummy_spatvector)
+toc()
+
+tic()
+terra::xmax(dummy_spatvector)
+toc()
+
+# dbSpatial
+tic()
+dbSpatial::ST_YMax(db_points)
+toc()
+
+tic()
+dbSpatial::ST_XMax(db_points)
+toc()
+```
+
+### nrow
+```{r}
+# terra
+tic()
+terra::nrow(dummy_spatvector)
+toc()
+
+# dbSpatial
+tic()
+dbSpatial::nrow(db_points)
+toc()
+```
+
+### centroids
+```{r}
+# # terra
+# terra::geom(dummy_spatvector)
+# 
+# terra::centroids(dummy_spatvector)
+```
+
+
+
+

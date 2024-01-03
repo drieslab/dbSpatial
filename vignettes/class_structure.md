@@ -1,0 +1,15 @@
+# Class Structure
+
+The `{dbSpatial}` package contains convenience functions for working
+with diverse spatial file formats through the duckdb spatial extension,
+as well as functions for IO of spatial `{terra}` spatVector and
+spatRaster objects into a duckdb db.
+
+For more information about duckdb spatial extension see [the duckdb
+spatial extension](https://duckdb.org/docs/extensions/spatial.html).
+
+For more information about loading multiple geospatial files into
+duckdb, see the [duckdbfs
+package](https://github.com/cboettig/duckdbfs).
+
+[![](https://mermaid.ink/img/pako:eNp9Ut9LwzAQ_lfCPSl2tT-2dQuyJ18FUVCQgtza28xsk5Kk4Cz7301b2RZR85Dku-_LXb7jOihUScChqNCYW4FbjXUucymxJtNgQewWLbKujzG3Bh1zjBVYvW5ERaYbmX5dsdC8NR7ektoZJb1YGI7w4Ge1pDW-qvWOCutnHRjO-7JPjlT6D_IBjUNnyQ--l2Ev2-KddeeFy_XjaMgrWigpOVsLiXp_ik-O5hutGtJWkLm4PJbsj19T3yshB1e_Wj-TVfutkp5w0HotZzdhuDo94uyBsLx-1sJSLr02_qs8htlksvr51X_o8YsQQE26RlG6-Rk6l4N9o5py4O5a0gbbyubgDDgptlY97mUBfIOVoQDapkRL3yN3jDYoX5Ry2Op2hMA7-AAeZ1EYJ1mynEbpYprMl7MA9sBnWZjO59E0yWaLRRylySGAzyFBFGbxMo7n2TRLs2UapQFQKdzs3H1PfH8cvgBWwfdd?type=png)](https://mermaid.live/edit#pako:eNp9Ut9LwzAQ_lfCPSl2tT-2dQuyJ18FUVCQgtza28xsk5Kk4Cz7301b2RZR85Dku-_LXb7jOihUScChqNCYW4FbjXUucymxJtNgQewWLbKujzG3Bh1zjBVYvW5ERaYbmX5dsdC8NR7ektoZJb1YGI7w4Ge1pDW-qvWOCutnHRjO-7JPjlT6D_IBjUNnyQ--l2Ev2-KddeeFy_XjaMgrWigpOVsLiXp_ik-O5hutGtJWkLm4PJbsj19T3yshB1e_Wj-TVfutkp5w0HotZzdhuDo94uyBsLx-1sJSLr02_qs8htlksvr51X_o8YsQQE26RlG6-Rk6l4N9o5py4O5a0gbbyubgDDgptlY97mUBfIOVoQDapkRL3yN3jDYoX5Ry2Op2hMA7-AAeZ1EYJ1mynEbpYprMl7MA9sBnWZjO59E0yWaLRRylySGAzyFBFGbxMo7n2TRLs2UapQFQKdzs3H1PfH8cvgBWwfdd)
