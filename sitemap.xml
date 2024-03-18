@@ -7,9 +7,6 @@
     <loc>https://drieslab.github.io/dbSpatial/LICENSE-text.html</loc>
   </url>
   <url>
-    <loc>https://drieslab.github.io/dbSpatial/articles/benchmarks.html</loc>
-  </url>
-  <url>
     <loc>https://drieslab.github.io/dbSpatial/articles/class_structure.html</loc>
   </url>
   <url>
@@ -34,7 +31,13 @@
     <loc>https://drieslab.github.io/dbSpatial/reference/ST_Extent.html</loc>
   </url>
   <url>
+    <loc>https://drieslab.github.io/dbSpatial/reference/ST_GeometryType.html</loc>
+  </url>
+  <url>
     <loc>https://drieslab.github.io/dbSpatial/reference/ST_IsValid.html</loc>
+  </url>
+  <url>
+    <loc>https://drieslab.github.io/dbSpatial/reference/ST_Read.html</loc>
   </url>
   <url>
     <loc>https://drieslab.github.io/dbSpatial/reference/ST_Translate.html</loc>
@@ -46,18 +49,15 @@
     <loc>https://drieslab.github.io/dbSpatial/reference/ST_YMax.html</loc>
   </url>
   <url>
-    <loc>https://drieslab.github.io/dbSpatial/reference/createDbSpatPoints.html</loc>
+    <loc>https://drieslab.github.io/dbSpatial/reference/dbSpatial.html</loc>
   </url>
   <url>
-    <loc>https://drieslab.github.io/dbSpatial/reference/createDbSpatPolygons.html</loc>
+    <loc>https://drieslab.github.io/dbSpatial/reference/dot-sim_dbSpatial.html</loc>
   </url>
   <url>
     <loc>https://drieslab.github.io/dbSpatial/reference/index.html</loc>
   </url>
   <url>
     <loc>https://drieslab.github.io/dbSpatial/reference/loadSpatial.html</loc>
-  </url>
-  <url>
-    <loc>https://drieslab.github.io/dbSpatial/reference/nrow.html</loc>
   </url>
 </urlset>

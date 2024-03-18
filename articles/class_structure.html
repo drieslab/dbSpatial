@@ -41,7 +41,6 @@
 <li class="active nav-item dropdown">
   <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" id="dropdown-articles">Articles</a>
   <div class="dropdown-menu" aria-labelledby="dropdown-articles">
-    <a class="dropdown-item" href="../articles/benchmarks.html">benchmarks</a>
     <a class="dropdown-item" href="../articles/class_structure.html">Class Structure</a>
     <a class="dropdown-item" href="../articles/getting_started.html">Getting Started</a>
     <a class="dropdown-item" href="../articles/spatial_operations.html">Spatial Operations</a>
@@ -80,15 +79,14 @@
 <h2 id="class-structure">Class Structure<a class="anchor" aria-label="anchor" href="#class-structure"></a>
 </h2>
 <p>The <a href="https://drieslab.github.io/dbSpatial/">dbSpatial</a> package contains convenience functions
-for working with diverse spatial file formats through the duckdb spatial
-extension, as well as functions for IO of spatial <a href="https://rspatial.org/" class="external-link">terra</a>
-spatVector and spatRaster objects into a duckdb db.</p>
-<p>For more information about duckdb spatial extension see <a href="https://duckdb.org/docs/extensions/spatial.html" class="external-link">the duckdb
+for working with diverse spatial data sources and file formats through
+the DuckDB spatial extension.</p>
+<p>For more information about DuckDB spatial extension see <a href="https://DuckDB.org/docs/extensions/spatial.html" class="external-link">the DuckDB
 spatial extension</a>.</p>
 <p>For more information about loading multiple geospatial files into
-duckdb, see the <a href="https://github.com/cboettig/duckdbfs" class="external-link">duckdbfs
+DuckDB, see the <a href="https://github.com/cboettig/DuckDBfs" class="external-link">DuckDBfs
 package</a>.</p>
-<p><a href="https://mermaid.live/edit#pako:eNp9Ul1rwkAQ_CvHPrU0pvlQo0fxyddCUWihBMomWfUkuQt3J9QG_3svSaumtL2Xy-xMZm-HbSBXBQGHvERjlgK3GqtUplJiRabGnNgSLbKmrTF3Oh1zjBVYvm1ESabpmfbcMd_s6gHektobJQc13-_haeiqv21VtqfcDo0taY2ct5JnRyr9B7lC49CV_2k4TpF9dylFxprr_kW27qlB41xJyVkmJOrjpT46Z1BrVZO2gszN7blte_1q_aSE7Cb7NYErWXncKjkQdtpB8uzB9xeXnzhbERb3L1pYSuXPNP8Vn8tsNFr8fO0_dP9K8KAiXaEo3CZ14aVgd1RRCtx9FrTBQ2lTcDM4KR6sWh9lDnyDpSEPDnWBlr6W71ytUb4q5bDVhx4Cb-AdeJgEfhgl0XwcxLNxNJ1PPDgCnyR-PJ0G4yiZzGZhEEcnDz46g8BPwnkYTpNxEifzOIg9oEK4FXr82v32On0CvVb7eA" class="external-link"><img src="https://mermaid.ink/img/pako:eNp9Ul1rwkAQ_CvHPrU0pvlQo0fxyddCUWihBMomWfUkuQt3J9QG_3svSaumtL2Xy-xMZm-HbSBXBQGHvERjlgK3GqtUplJiRabGnNgSLbKmrTF3Oh1zjBVYvm1ESabpmfbcMd_s6gHektobJQc13-_haeiqv21VtqfcDo0taY2ct5JnRyr9B7lC49CV_2k4TpF9dylFxprr_kW27qlB41xJyVkmJOrjpT46Z1BrVZO2gszN7blte_1q_aSE7Cb7NYErWXncKjkQdtpB8uzB9xeXnzhbERb3L1pYSuXPNP8Vn8tsNFr8fO0_dP9K8KAiXaEo3CZ14aVgd1RRCtx9FrTBQ2lTcDM4KR6sWh9lDnyDpSEPDnWBlr6W71ytUb4q5bDVhx4Cb-AdeJgEfhgl0XwcxLNxNJ1PPDgCnyR-PJ0G4yiZzGZhEEcnDz46g8BPwnkYTpNxEifzOIg9oEK4FXr82v32On0CvVb7eA?type=png"></a></p>
+<p><a href="https://mermaid.live/edit#pako:eNp9U-9r2zAQ_VeEPu2Hq0WzYreiDAqFfRqMpmwwDOFsyYlaWQqSPJaZ_O-TnTSN1jb6cr73jnfHu_OAGysk5rjR4P2tgpWDrjKVMdBJv4FGotub-xs0jBiKb6pDkQkK9LJVWvphz4zvIyJ-vUnylbQP3poEI2Sf7lJVtzjI2vpBNiEVDtI54Hzs_COS1r1B3oGP2Sn5VdkQLOerKX63ygR_jtfblTVJhW-jdvvqzMpcdLKzbpsMKyAAad3o4Qs4QK2f4Elsl_ot6icbtKrRcNrsSCXNGmsMR6JvHkW9HJNoj0od_w26l3xa5Sk8NuWRdM0aTiy7QIv75Yd371Hbm0nqedoxHCZObgBdE_LleT6O7iSITz-dCrIy_-_1bPHR0LNVOMOddB0oEW93cqPCYS07WWEeP4VsodehwnHWWAp9sIutaTBvQXuZ4X4TVyEP535EN2B-WRvz4Pp9ivmA_2BO53NCP5c5ZSUr2JzRywxvIzyjJC-KGWOsmFNWFMUuw38nhRkp6RWlRcnKvLzKZ3mGpVDxar8dfrcx7P4BMZQVSg" class="external-link"><img src="https://mermaid.ink/img/pako:eNp9U-9r2zAQ_VeEPu2Hq0WzYreiDAqFfRqMpmwwDOFsyYlaWQqSPJaZ_O-TnTSN1jb6cr73jnfHu_OAGysk5rjR4P2tgpWDrjKVMdBJv4FGotub-xs0jBiKb6pDkQkK9LJVWvphz4zvIyJ-vUnylbQP3poEI2Sf7lJVtzjI2vpBNiEVDtI54Hzs_COS1r1B3oGP2Sn5VdkQLOerKX63ygR_jtfblTVJhW-jdvvqzMpcdLKzbpsMKyAAad3o4Qs4QK2f4Elsl_ot6icbtKrRcNrsSCXNGmsMR6JvHkW9HJNoj0od_w26l3xa5Sk8NuWRdM0aTiy7QIv75Yd371Hbm0nqedoxHCZObgBdE_LleT6O7iSITz-dCrIy_-_1bPHR0LNVOMOddB0oEW93cqPCYS07WWEeP4VsodehwnHWWAp9sIutaTBvQXuZ4X4TVyEP535EN2B-WRvz4Pp9ivmA_2BO53NCP5c5ZSUr2JzRywxvIzyjJC-KGWOsmFNWFMUuw38nhRkp6RWlRcnKvLzKZ3mGpVDxar8dfrcx7P4BMZQVSg?type=png"></a></p>
 </div>
   </main>
 </div>

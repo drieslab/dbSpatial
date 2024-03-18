@@ -24,7 +24,6 @@
 <li class="nav-item dropdown">
   <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" id="dropdown-articles">Articles</a>
   <div class="dropdown-menu" aria-labelledby="dropdown-articles">
-    <a class="dropdown-item" href="../articles/benchmarks.html">benchmarks</a>
     <a class="dropdown-item" href="../articles/class_structure.html">Class Structure</a>
     <a class="dropdown-item" href="../articles/getting_started.html">Getting Started</a>
     <a class="dropdown-item" href="../articles/spatial_operations.html">Spatial Operations</a>
@@ -64,9 +63,19 @@
         <dd>Get extent of a geometry</dd>
       </dl><dl><dt>
           
+          <code><a href="ST_GeometryType.html">ST_GeometryType()</a></code> 
+        </dt>
+        <dd>Return geometry type</dd>
+      </dl><dl><dt>
+          
           <code><a href="ST_IsValid.html">ST_IsValid()</a></code> 
         </dt>
         <dd>Determine if geometry is valid</dd>
+      </dl><dl><dt>
+          
+          <code><a href="ST_Read.html">ST_Read()</a></code> 
+        </dt>
+        <dd>Read spatial data from a file and create a table in a duckdb database</dd>
       </dl><dl><dt>
           
           <code><a href="ST_Translate.html">ST_Translate()</a></code> 
@@ -84,24 +93,14 @@
         <dd>Get maximum y coordinate</dd>
       </dl><dl><dt>
           
-          <code><a href="createDbSpatPoints.html">createDbSpatPoints()</a></code> 
+          <code><a href="dbSpatial.html">dbSpatial()</a></code> 
         </dt>
-        <dd>Create a duckdb table with spatial points</dd>
-      </dl><dl><dt>
-          
-          <code><a href="createDbSpatPolygons.html">createDbSpatPolygons()</a></code> 
-        </dt>
-        <dd>Create a duckdb table with spatial polygons</dd>
+        <dd>Create a <code>dbSpatial</code> object with geometry value.</dd>
       </dl><dl><dt>
           
           <code><a href="loadSpatial.html">loadSpatial()</a></code> 
         </dt>
-        <dd>Install and/or load duckdb spatial extension</dd>
-      </dl><dl><dt>
-          
-          <code><a href="nrow.html">nrow()</a></code> 
-        </dt>
-        <dd>Count number of rows in a duckdb table</dd>
+        <dd>Install and/or load DuckDB spatial extension</dd>
       </dl></div>
   </main></div>
 

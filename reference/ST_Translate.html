@@ -24,7 +24,6 @@
 <li class="nav-item dropdown">
   <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" id="dropdown-articles">Articles</a>
   <div class="dropdown-menu" aria-labelledby="dropdown-articles">
-    <a class="dropdown-item" href="../articles/benchmarks.html">benchmarks</a>
     <a class="dropdown-item" href="../articles/class_structure.html">Class Structure</a>
     <a class="dropdown-item" href="../articles/getting_started.html">Getting Started</a>
     <a class="dropdown-item" href="../articles/spatial_operations.html">Spatial Operations</a>
@@ -54,13 +53,18 @@
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">ST_Translate</span><span class="op">(</span><span class="va">tbl</span>, <span class="va">dx</span>, <span class="va">dy</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">ST_Translate</span><span class="op">(</span><span class="va">tbl</span>, geomName <span class="op">=</span> <span class="st">"geom"</span>, <span class="va">dx</span>, <span class="va">dy</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div class="section level2">
     <h2 id="arguments">Arguments<a class="anchor" aria-label="anchor" href="#arguments"></a></h2>
     <dl><dt>tbl</dt>
 <dd><p>name of a table in a duckdb database</p></dd>
+
+
+<dt>geomName</dt>
+<dd><p>name of the column containing the geometry value in the tbl.
+default = "geom".</p></dd>
 
 
 <dt>dx</dt>
@@ -80,8 +84,23 @@
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">TODO</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in eval(expr, envir, enclos):</span> object 'TODO' not found</span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">con</span> <span class="op">=</span> <span class="fu">DBI</span><span class="fu">::</span><span class="fu"><a href="https://dbi.r-dbi.org/reference/dbConnect.html" class="external-link">dbConnect</a></span><span class="op">(</span><span class="fu">duckdb</span><span class="fu">::</span><span class="fu"><a href="https://r.duckdb.org/reference/duckdb.html" class="external-link">duckdb</a></span><span class="op">(</span><span class="op">)</span>, <span class="st">":memory:"</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="va">value</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"data"</span>, <span class="st">"dummy_points.shp"</span>, package <span class="op">=</span> <span class="st">"dbSpatial"</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="va">points</span> <span class="op">&lt;-</span> <span class="fu"><a href="ST_Read.html">ST_Read</a></span><span class="op">(</span>conn <span class="op">=</span> <span class="va">con</span>, name <span class="op">=</span> <span class="st">"points"</span>, value <span class="op">=</span> <span class="va">value</span>, overwrite <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in .check_value(value):</span> Invalid "value" input passed.</span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="va">points</span> <span class="op">|&gt;</span> </span></span>
+<span class="r-in"><span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span>geom_text <span class="op">=</span> <span class="fu">ST_AsText</span><span class="op">(</span><span class="va">geom</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in UseMethod("mutate"):</span> no applicable method for 'mutate' applied to an object of class "function"</span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="va">points_translated</span> <span class="op">&lt;-</span> <span class="fu">ST_Translate</span><span class="op">(</span>tbl <span class="op">=</span> <span class="va">points</span>, dx <span class="op">=</span> <span class="fl">100</span>, dy <span class="op">=</span> <span class="op">-</span><span class="fl">20</span><span class="op">)</span></span></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in .check_tbl(tbl = tbl):</span> Please provide a duckdb table</span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="va">points_translated</span> <span class="op">|&gt;</span> </span></span>
+<span class="r-in"><span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span>geom_text <span class="op">=</span> <span class="fu">ST_AsText</span><span class="op">(</span><span class="va">geom</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in eval(expr, envir, enclos):</span> object 'points_translated' not found</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>

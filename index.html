@@ -41,7 +41,6 @@
 <li class="nav-item dropdown">
   <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" id="dropdown-articles">Articles</a>
   <div class="dropdown-menu" aria-labelledby="dropdown-articles">
-    <a class="dropdown-item" href="articles/benchmarks.html">benchmarks</a>
     <a class="dropdown-item" href="articles/class_structure.html">Class Structure</a>
     <a class="dropdown-item" href="articles/getting_started.html">Getting Started</a>
     <a class="dropdown-item" href="articles/spatial_operations.html">Spatial Operations</a>
@@ -89,7 +88,7 @@
 <span><span class="co">#&gt;     nrow</span></span>
 <span></span>
 <span><span class="co"># create duckdb db in memory</span></span>
-<span><span class="va">duckdb_conn</span> <span class="op">=</span> <span class="fu">DBI</span><span class="fu">::</span><span class="fu"><a href="https://dbi.r-dbi.org/reference/dbConnect.html" class="external-link">dbConnect</a></span><span class="op">(</span><span class="fu">duckdb</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/duckdb/man/duckdb.html" class="external-link">duckdb</a></span><span class="op">(</span><span class="op">)</span>, <span class="st">":memory:"</span><span class="op">)</span></span>
+<span><span class="va">duckdb_conn</span> <span class="op">=</span> <span class="fu">DBI</span><span class="fu">::</span><span class="fu"><a href="https://dbi.r-dbi.org/reference/dbConnect.html" class="external-link">dbConnect</a></span><span class="op">(</span><span class="fu">duckdb</span><span class="fu">::</span><span class="fu"><a href="https://r.duckdb.org/reference/duckdb.html" class="external-link">duckdb</a></span><span class="op">(</span><span class="op">)</span>, <span class="st">":memory:"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># install and load duckdb spatial extension</span></span>
 <span><span class="fu"><a href="reference/loadSpatial.html">loadSpatial</a></span><span class="op">(</span>conn <span class="op">=</span> <span class="va">duckdb_conn</span><span class="op">)</span></span>
