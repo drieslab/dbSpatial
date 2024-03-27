@@ -26,7 +26,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">dbSpatial</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.0.9004</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.0.9005</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -144,58 +144,14 @@
 <span><span class="co">#&gt; SpatExtent : 1, 1000, 1, 1000 (xmin, xmax, ymin, ymax)</span></span>
 <span></span>
 <span><span class="co"># dbSpatial</span></span>
-<span><span class="fu">dbSpatial</span><span class="fu">::</span><span class="fu"><a href="../reference/ST_Extent.html">ST_Extent</a></span><span class="op">(</span>tbl <span class="op">=</span> <span class="va">db_points</span><span class="op">)</span></span>
+<span><span class="fu">dbSpatial</span><span class="fu">::</span><span class="fu"><a href="../reference/st_extent.html">st_extent</a></span><span class="op">(</span>tbl <span class="op">=</span> <span class="va">db_points</span><span class="op">)</span></span>
 <span><span class="co">#&gt;   min_x max_x min_y max_y</span></span>
 <span><span class="co">#&gt; 1     1  1000     1  1000</span></span></code></pre></div>
 </div>
 <div class="section level4">
-<h4 id="shift">Shift<a class="anchor" aria-label="anchor" href="#shift"></a>
-</h4>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># terra</span></span>
-<span><span class="fu"><a href="https://rspatial.github.io/terra/reference/headtail.html" class="external-link">head</a></span><span class="op">(</span><span class="fu">terra</span><span class="fu">::</span><span class="fu"><a href="https://rspatial.github.io/terra/reference/geometry.html" class="external-link">geom</a></span><span class="op">(</span><span class="va">dummy_spatvector</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="co">#&gt;      geom part x y hole</span></span>
-<span><span class="co">#&gt; [1,]    1    1 1 1    0</span></span>
-<span><span class="co">#&gt; [2,]    2    1 2 2    0</span></span>
-<span><span class="co">#&gt; [3,]    3    1 3 3    0</span></span>
-<span><span class="co">#&gt; [4,]    4    1 4 4    0</span></span>
-<span><span class="co">#&gt; [5,]    5    1 5 5    0</span></span>
-<span><span class="co">#&gt; [6,]    6    1 6 6    0</span></span>
-<span></span>
-<span><span class="va">shifted_spatVector</span> <span class="op">=</span> <span class="fu">terra</span><span class="fu">::</span><span class="fu"><a href="https://rspatial.github.io/terra/reference/shift.html" class="external-link">shift</a></span><span class="op">(</span><span class="va">dummy_spatvector</span>, dx <span class="op">=</span> <span class="fl">10</span>, dy <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu"><a href="https://rspatial.github.io/terra/reference/headtail.html" class="external-link">head</a></span><span class="op">(</span><span class="fu">terra</span><span class="fu">::</span><span class="fu"><a href="https://rspatial.github.io/terra/reference/geometry.html" class="external-link">geom</a></span><span class="op">(</span><span class="va">shifted_spatVector</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="co">#&gt;      geom part  x  y hole</span></span>
-<span><span class="co">#&gt; [1,]    1    1 11 11    0</span></span>
-<span><span class="co">#&gt; [2,]    2    1 12 12    0</span></span>
-<span><span class="co">#&gt; [3,]    3    1 13 13    0</span></span>
-<span><span class="co">#&gt; [4,]    4    1 14 14    0</span></span>
-<span><span class="co">#&gt; [5,]    5    1 15 15    0</span></span>
-<span><span class="co">#&gt; [6,]    6    1 16 16    0</span></span>
-<span></span>
-<span><span class="co"># dbSpatial</span></span>
-<span><span class="fu">dbSpatial</span><span class="fu">::</span><span class="fu"><a href="../reference/ST_Translate.html">ST_Translate</a></span><span class="op">(</span>tbl <span class="op">=</span> <span class="va">db_points</span>, dx <span class="op">=</span> <span class="fl">10</span>, dy <span class="op">=</span> <span class="fl">10</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span>geom_text <span class="op">=</span> <span class="fu">ST_AsText</span><span class="op">(</span><span class="va">geom</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># Source:   SQL [?? x 4]</span></span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># Database: DuckDB v0.10.0 [unknown@Linux 6.5.0-1016-azure:R 4.3.3/:memory:]</span></span></span>
-<span><span class="co">#&gt;       id name  geom       geom_text    </span></span>
-<span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;list&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span>     1 A_1   <span style="color: #949494;">&lt;raw [32]&gt;</span> POINT (11 11)</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span>     2 A_2   <span style="color: #949494;">&lt;raw [32]&gt;</span> POINT (12 12)</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span>     3 A_3   <span style="color: #949494;">&lt;raw [32]&gt;</span> POINT (13 13)</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span>     4 A_4   <span style="color: #949494;">&lt;raw [32]&gt;</span> POINT (14 14)</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span>     5 A_5   <span style="color: #949494;">&lt;raw [32]&gt;</span> POINT (15 15)</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span>     6 A_6   <span style="color: #949494;">&lt;raw [32]&gt;</span> POINT (16 16)</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span>     7 A_7   <span style="color: #949494;">&lt;raw [32]&gt;</span> POINT (17 17)</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span>     8 A_8   <span style="color: #949494;">&lt;raw [32]&gt;</span> POINT (18 18)</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span>     9 A_9   <span style="color: #949494;">&lt;raw [32]&gt;</span> POINT (19 19)</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span>    10 A_10  <span style="color: #949494;">&lt;raw [32]&gt;</span> POINT (20 20)</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># ℹ more rows</span></span></span></code></pre></div>
-</div>
-<div class="section level4">
 <h4 id="is-valid">Is.Valid<a class="anchor" aria-label="anchor" href="#is-valid"></a>
 </h4>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># terra</span></span>
 <span><span class="fu"><a href="https://rspatial.github.io/terra/reference/headtail.html" class="external-link">head</a></span><span class="op">(</span><span class="fu">terra</span><span class="fu">::</span><span class="fu"><a href="https://rspatial.github.io/terra/reference/geometry.html" class="external-link">geom</a></span><span class="op">(</span><span class="va">dummy_spatvector</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co">#&gt;      geom part x y hole</span></span>
@@ -209,13 +165,27 @@
 <span><span class="fu"><a href="https://rspatial.github.io/terra/reference/headtail.html" class="external-link">head</a></span><span class="op">(</span><span class="fu">terra</span><span class="fu">::</span><span class="fu"><a href="https://rspatial.github.io/terra/reference/is.valid.html" class="external-link">is.valid</a></span><span class="op">(</span><span class="va">dummy_spatvector</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] TRUE TRUE TRUE TRUE TRUE TRUE</span></span>
 <span></span>
-<span><span class="fu">dbSpatial</span><span class="fu">::</span><span class="fu"><a href="../reference/ST_IsValid.html">ST_IsValid</a></span><span class="op">(</span>tbl <span class="op">=</span> <span class="va">db_points</span><span class="op">)</span></span>
-<span><span class="co">#&gt;  [1] TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE</span></span></code></pre></div>
+<span><span class="fu">dbSpatial</span><span class="fu">::</span><span class="fu"><a href="../reference/st_isvalid.html">st_isvalid</a></span><span class="op">(</span>tbl <span class="op">=</span> <span class="va">db_points</span><span class="op">)</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># Source:   SQL [?? x 1]</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># Database: DuckDB v0.10.0 [unknown@Linux 6.5.0-1016-azure:R 4.3.3/:memory:]</span></span></span>
+<span><span class="co">#&gt;    geom </span></span>
+<span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> TRUE </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> TRUE </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> TRUE </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> TRUE </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> TRUE </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> TRUE </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> TRUE </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> TRUE </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> TRUE </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> TRUE </span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># ℹ more rows</span></span></span></code></pre></div>
 </div>
 <div class="section level4">
 <h4 id="y-x-max">Y, X Max<a class="anchor" aria-label="anchor" href="#y-x-max"></a>
 </h4>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># terra</span></span>
 <span><span class="fu"><a href="https://rspatial.github.io/terra/reference/headtail.html" class="external-link">head</a></span><span class="op">(</span><span class="fu">terra</span><span class="fu">::</span><span class="fu"><a href="https://rspatial.github.io/terra/reference/geometry.html" class="external-link">geom</a></span><span class="op">(</span><span class="va">dummy_spatvector</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co">#&gt;      geom part x y hole</span></span>
@@ -233,11 +203,39 @@
 <span><span class="co">#&gt; [1] 1000</span></span>
 <span></span>
 <span><span class="co"># dbSpatial</span></span>
-<span><span class="fu">dbSpatial</span><span class="fu">::</span><span class="fu"><a href="../reference/ST_YMax.html">ST_YMax</a></span><span class="op">(</span><span class="va">db_points</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] 1000</span></span>
+<span><span class="fu">dbSpatial</span><span class="fu">::</span><span class="fu"><a href="../reference/st_ymax.html">st_ymax</a></span><span class="op">(</span><span class="va">db_points</span><span class="op">)</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># Source:   SQL [?? x 1]</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># Database: DuckDB v0.10.0 [unknown@Linux 6.5.0-1016-azure:R 4.3.3/:memory:]</span></span></span>
+<span><span class="co">#&gt;     geom</span></span>
+<span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span>     1</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span>     2</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span>     3</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span>     4</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span>     5</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span>     6</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span>     7</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span>     8</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span>     9</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span>    10</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># ℹ more rows</span></span></span>
 <span></span>
-<span><span class="fu">dbSpatial</span><span class="fu">::</span><span class="fu"><a href="../reference/ST_XMax.html">ST_XMax</a></span><span class="op">(</span><span class="va">db_points</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] 1000</span></span></code></pre></div>
+<span><span class="fu">dbSpatial</span><span class="fu">::</span><span class="fu"><a href="../reference/st_xmax.html">st_xmax</a></span><span class="op">(</span><span class="va">db_points</span><span class="op">)</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># Source:   SQL [?? x 1]</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># Database: DuckDB v0.10.0 [unknown@Linux 6.5.0-1016-azure:R 4.3.3/:memory:]</span></span></span>
+<span><span class="co">#&gt;     geom</span></span>
+<span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span>     1</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span>     2</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span>     3</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span>     4</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span>     5</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span>     6</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span>     7</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span>     8</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span>     9</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span>    10</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># ℹ more rows</span></span></span></code></pre></div>
 </div>
 </div>
 </div>

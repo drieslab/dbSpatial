@@ -28,27 +28,6 @@
     <loc>https://drieslab.github.io/dbSpatial/news/index.html</loc>
   </url>
   <url>
-    <loc>https://drieslab.github.io/dbSpatial/reference/ST_Extent.html</loc>
-  </url>
-  <url>
-    <loc>https://drieslab.github.io/dbSpatial/reference/ST_GeometryType.html</loc>
-  </url>
-  <url>
-    <loc>https://drieslab.github.io/dbSpatial/reference/ST_IsValid.html</loc>
-  </url>
-  <url>
-    <loc>https://drieslab.github.io/dbSpatial/reference/ST_Read.html</loc>
-  </url>
-  <url>
-    <loc>https://drieslab.github.io/dbSpatial/reference/ST_Translate.html</loc>
-  </url>
-  <url>
-    <loc>https://drieslab.github.io/dbSpatial/reference/ST_XMax.html</loc>
-  </url>
-  <url>
-    <loc>https://drieslab.github.io/dbSpatial/reference/ST_YMax.html</loc>
-  </url>
-  <url>
     <loc>https://drieslab.github.io/dbSpatial/reference/dbSpatial.html</loc>
   </url>
   <url>
@@ -59,5 +38,56 @@
   </url>
   <url>
     <loc>https://drieslab.github.io/dbSpatial/reference/loadSpatial.html</loc>
+  </url>
+  <url>
+    <loc>https://drieslab.github.io/dbSpatial/reference/st_contains.html</loc>
+  </url>
+  <url>
+    <loc>https://drieslab.github.io/dbSpatial/reference/st_coveredby.html</loc>
+  </url>
+  <url>
+    <loc>https://drieslab.github.io/dbSpatial/reference/st_covers.html</loc>
+  </url>
+  <url>
+    <loc>https://drieslab.github.io/dbSpatial/reference/st_crosses.html</loc>
+  </url>
+  <url>
+    <loc>https://drieslab.github.io/dbSpatial/reference/st_difference.html</loc>
+  </url>
+  <url>
+    <loc>https://drieslab.github.io/dbSpatial/reference/st_disjoint.html</loc>
+  </url>
+  <url>
+    <loc>https://drieslab.github.io/dbSpatial/reference/st_distance.html</loc>
+  </url>
+  <url>
+    <loc>https://drieslab.github.io/dbSpatial/reference/st_equals.html</loc>
+  </url>
+  <url>
+    <loc>https://drieslab.github.io/dbSpatial/reference/st_extent.html</loc>
+  </url>
+  <url>
+    <loc>https://drieslab.github.io/dbSpatial/reference/st_geometrytype.html</loc>
+  </url>
+  <url>
+    <loc>https://drieslab.github.io/dbSpatial/reference/st_intersects.html</loc>
+  </url>
+  <url>
+    <loc>https://drieslab.github.io/dbSpatial/reference/st_isvalid.html</loc>
+  </url>
+  <url>
+    <loc>https://drieslab.github.io/dbSpatial/reference/st_read.html</loc>
+  </url>
+  <url>
+    <loc>https://drieslab.github.io/dbSpatial/reference/st_touches.html</loc>
+  </url>
+  <url>
+    <loc>https://drieslab.github.io/dbSpatial/reference/st_translate.html</loc>
+  </url>
+  <url>
+    <loc>https://drieslab.github.io/dbSpatial/reference/st_xmax.html</loc>
+  </url>
+  <url>
+    <loc>https://drieslab.github.io/dbSpatial/reference/st_ymax.html</loc>
   </url>
 </urlset>
