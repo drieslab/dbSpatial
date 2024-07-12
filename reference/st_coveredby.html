@@ -137,7 +137,7 @@ resulting data. default: "coveredby_geom"</p></dd>
 <span class="r-in"><span><span class="va">points</span> <span class="op">|&gt;</span> </span></span>
 <span class="r-in"><span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span>geom_text <span class="op">=</span> <span class="fu">ST_AsText</span><span class="op">(</span><span class="va">geom</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># Source:   SQL [3 x 6]</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># Database: DuckDB v1.0.0 [unknown@Linux 6.5.0-1022-azure:R 4.4.1/:memory:]</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># Database: DuckDB v1.0.0 [unknown@Linux 6.5.0-1023-azure:R 4.4.1/:memory:]</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>       x     y    id name  geom       geom_text      </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;list&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span>   100   500     1 A1    <span style="color: #949494;">&lt;raw [32]&gt;</span> POINT (100 500)</span>
@@ -159,7 +159,7 @@ resulting data. default: "coveredby_geom"</p></dd>
 <span class="r-in"><span><span class="va">points2</span> <span class="op">|&gt;</span> </span></span>
 <span class="r-in"><span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span>geom_text <span class="op">=</span> <span class="fu">ST_AsText</span><span class="op">(</span><span class="va">geom</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># Source:   SQL [3 x 6]</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># Database: DuckDB v1.0.0 [unknown@Linux 6.5.0-1022-azure:R 4.4.1/:memory:]</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># Database: DuckDB v1.0.0 [unknown@Linux 6.5.0-1023-azure:R 4.4.1/:memory:]</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>       x     y    id name  geom       geom_text      </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;list&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span>   100   500     1 A2    <span style="color: #949494;">&lt;raw [32]&gt;</span> POINT (100 500)</span>
@@ -173,7 +173,7 @@ resulting data. default: "coveredby_geom"</p></dd>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="va">res</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># Source:   table&lt;coveredby_geom&gt; [1 x 6]</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># Database: DuckDB v1.0.0 [unknown@Linux 6.5.0-1022-azure:R 4.4.1/:memory:]</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># Database: DuckDB v1.0.0 [unknown@Linux 6.5.0-1023-azure:R 4.4.1/:memory:]</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   name      x     y    id name_1 geom      </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;list&gt;</span>    </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> A1      100   500     1 A2     <span style="color: #949494;">&lt;raw [32]&gt;</span></span>
