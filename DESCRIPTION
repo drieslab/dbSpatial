@@ -22,8 +22,6 @@ Imports:
     dbplyr,
     terra,
     sf,
-    GiottoUtils,
-    GiottoClass,
     crayon,
     rlang,
     glue,
@@ -31,9 +29,6 @@ Imports:
 Suggests: 
     knitr,
     rmarkdown
-Remotes:
-    drieslab/GiottoUtils
-    drieslab/GiottoClass@db
 VignetteBuilder: knitr
 URL: https://drieslab.github.io/dbSpatial/
 BugReports: https://drieslab.github.io/dbSpatial//issues
