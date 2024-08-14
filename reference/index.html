@@ -39,7 +39,7 @@
     <div class="section level2">
       <h2 id="dbspatial-package">dbSpatial Package<a class="anchor" aria-label="anchor" href="#dbspatial-package"></a></h2>
 
-      <div class="section-desc"><p>Functions for constructing dbSpatial objects</p></div>
+      <div class="section-desc"><p>Functions and methods for <code>dbSpatial</code> objects</p></div>
 
 
     </div><div class="section level2">
@@ -49,14 +49,26 @@
 
       <dl><dt>
 
+          <code><a href="as_dbSpatial.html">as_dbSpatial()</a></code>
+
+        </dt>
+        <dd>Convert an sf or terra object to a <code>dbSpatial</code> object</dd>
+      </dl><dl><dt>
+
           <code><a href="dbSpatial.html">dbSpatial()</a></code>
 
         </dt>
-        <dd>Create a <code>dbSpatial</code> object with geometry</dd>
-      </dl></div><div class="section level2">
-      <h2 id="spatial-relationships">Spatial Relationships<a class="anchor" aria-label="anchor" href="#spatial-relationships"></a></h2>
+        <dd>Create a <code>dbSpatial</code> object with geometry data type</dd>
+      </dl><dl><dt>
 
-      <div class="section-desc"><p>Functions that calculate spatial relationships between two dbSpatial objects.</p></div>
+          <code><a href="show.html">show(<i>&lt;dbSpatial&gt;</i>)</a></code>
+
+        </dt>
+        <dd>show method for dbSpatial</dd>
+      </dl></div><div class="section level2">
+      <h2 id="spatial-joins">Spatial Joins<a class="anchor" aria-label="anchor" href="#spatial-joins"></a></h2>
+
+      <div class="section-desc"><p>Functions and methods that perform a spatial join between <code>dbSpatial</code> objects.</p></div>
 
 
     </div><div class="section level2">
@@ -69,65 +81,65 @@
           <code><a href="st_contains.html">st_contains()</a></code>
 
         </dt>
-        <dd>Determine if <code>geometries</code> in two dbSpatial objects contain each other</dd>
+        <dd>Determine if geometries in two <code>dbSpatial</code> objects contain each other</dd>
       </dl><dl><dt>
 
           <code><a href="st_coveredby.html">st_coveredby()</a></code>
 
         </dt>
-        <dd>Determine if <code>geometries</code> in two dbSpatial objects are covered by each other</dd>
+        <dd>Determine if geometries in two <code>dbSpatial</code> objects are covered by each other</dd>
       </dl><dl><dt>
 
           <code><a href="st_covers.html">st_covers()</a></code>
 
         </dt>
-        <dd>Determine if <code>geometries</code> in two dbSpatial objects are covering each other</dd>
+        <dd>Determine if geometries in two <code>dbSpatial</code> objects cover each other</dd>
       </dl><dl><dt>
 
           <code><a href="st_crosses.html">st_crosses()</a></code>
 
         </dt>
-        <dd>Determine if <code>geometries</code> in two dbSpatial objects are crossing</dd>
+        <dd>Determine if geometries in two <code>dbSpatial</code> objects cross each other</dd>
       </dl><dl><dt>
 
           <code><a href="st_difference.html">st_difference()</a></code>
 
         </dt>
-        <dd>Find difference in <code>geometries</code> between two dbSpatial objects</dd>
+        <dd>Calculate the difference between geometries in two <code>dbSpatial</code> objects</dd>
       </dl><dl><dt>
 
           <code><a href="st_disjoint.html">st_disjoint()</a></code>
 
         </dt>
-        <dd>Determine if <code>geometries</code> between two dbSpatial objects are disjoint</dd>
+        <dd>Determine if geometries in two <code>dbSpatial</code> objects are disjoint</dd>
       </dl><dl><dt>
 
           <code><a href="st_distance.html">st_distance()</a></code>
 
         </dt>
-        <dd>Find distance between <code>geometries</code> in two dbSpatial objects</dd>
+        <dd>Calculate the distance between geometries in two <code>dbSpatial</code> objects</dd>
       </dl><dl><dt>
 
           <code><a href="st_equals.html">st_equals()</a></code>
 
         </dt>
-        <dd>Determine if <code>geometries</code> between two dbSpatial objects are equal</dd>
+        <dd>Determine if geometries in two <code>dbSpatial</code> objects are equal</dd>
       </dl><dl><dt>
 
           <code><a href="st_intersects.html">st_intersects()</a></code>
 
         </dt>
-        <dd>Determine if <code>geometries</code> between two dbSpatial objects are intersecting</dd>
+        <dd>Determine if geometries between two <code>dbSpatial</code> objects are intersecting</dd>
       </dl><dl><dt>
 
           <code><a href="st_touches.html">st_touches()</a></code>
 
         </dt>
-        <dd>Determine if <code>geometries</code> between two dbSpatial objects are touching</dd>
+        <dd>Determine if geometries in two <code>dbSpatial</code> objects touch each other</dd>
       </dl></div><div class="section level2">
       <h2 id="spatial-summary">Spatial Summary<a class="anchor" aria-label="anchor" href="#spatial-summary"></a></h2>
 
-      <div class="section-desc"><p>Functions that summarize geometry data in a dbSpatial object.</p></div>
+      <div class="section-desc"><p>Functions and methods that summarize geometry data in a <code>dbSpatial</code> object.</p></div>
 
 
     </div><div class="section level2">
@@ -140,11 +152,23 @@
           <code><a href="st_extent.html">st_extent()</a></code>
 
         </dt>
-        <dd>Get extent of a geometry</dd>
+        <dd>Get extent of a geometry column in <code>dbSpatial</code> object</dd>
+      </dl><dl><dt>
+
+          <code><a href="st_xmax.html">st_xmax()</a></code>
+
+        </dt>
+        <dd>Get maximum x coordinate</dd>
+      </dl><dl><dt>
+
+          <code><a href="st_ymax.html">st_ymax()</a></code>
+
+        </dt>
+        <dd>Get maximum y coordinate</dd>
       </dl></div><div class="section level2">
       <h2 id="spatial-properties">Spatial Properties<a class="anchor" aria-label="anchor" href="#spatial-properties"></a></h2>
 
-      <div class="section-desc"><p>Functions that return a single vector about a geometry in a dbSpatial object.</p></div>
+      <div class="section-desc"><p>Functions and methods that return a single vector about a geometry in a <code>dbSpatial</code> object.</p></div>
 
 
     </div><div class="section level2">
@@ -164,22 +188,10 @@
 
         </dt>
         <dd>Determine if geometry is valid</dd>
-      </dl><dl><dt>
-
-          <code><a href="st_xmax.html">st_xmax()</a></code>
-
-        </dt>
-        <dd>Get maximum x coordinate</dd>
-      </dl><dl><dt>
-
-          <code><a href="st_ymax.html">st_ymax()</a></code>
-
-        </dt>
-        <dd>Get maximum y coordinate</dd>
       </dl></div><div class="section level2">
       <h2 id="geometry-construction">Geometry construction<a class="anchor" aria-label="anchor" href="#geometry-construction"></a></h2>
 
-      <div class="section-desc"><p>Functions for constructing or modifying geometry in a dbSpatial object.</p></div>
+      <div class="section-desc"><p>Functions and methods for constructing or modifying geometry in a <code>dbSpatial</code> object.</p></div>
 
 
     </div><div class="section level2">
@@ -189,26 +201,14 @@
 
       <dl><dt>
 
-          <code><a href="st_read.html">st_read()</a></code>
-
-        </dt>
-        <dd>Read spatial data from a file and create a table in a duckdb database</dd>
-      </dl><dl><dt>
-
           <code><a href="st_translate.html">st_translate()</a></code>
 
         </dt>
         <dd>Translate x, y coordinates by delta x, delta y for point geometries</dd>
-      </dl><dl><dt>
-
-          <code><a href="tessellate.html">tessellate()</a></code>
-
-        </dt>
-        <dd>Tessellate a dbSpatial object</dd>
       </dl></div><div class="section level2">
       <h2 id="duckdb-spatial-extension">DuckDB Spatial Extension<a class="anchor" aria-label="anchor" href="#duckdb-spatial-extension"></a></h2>
 
-      <div class="section-desc"><p>Functions specific for DuckDB spatial extension.</p></div>
+      <div class="section-desc"><p>Functions and methods specific for DuckDB spatial extension.</p></div>
 
 
     </div><div class="section level2">
@@ -222,6 +222,35 @@
 
         </dt>
         <dd>Install and/or load DuckDB spatial extension</dd>
+      </dl></div><div class="section level2">
+      <h2 id="dbdata">dbData<a class="anchor" aria-label="anchor" href="#dbdata"></a></h2>
+
+      <div class="section-desc"><p>dbData methods</p></div>
+
+
+    </div><div class="section level2">
+
+
+
+
+      <dl><dt>
+
+          <code><a href="head.html">head(<i>&lt;dbSpatial&gt;</i>)</a></code>
+
+        </dt>
+        <dd>head method for dbSpatial</dd>
+      </dl><dl><dt>
+
+          <code><a href="hidden_aliases.html">`[`(<i>&lt;dbSpatial&gt;</i>,<i>&lt;missing&gt;</i>,<i>&lt;missing&gt;</i>,<i>&lt;missing&gt;</i>)</a></code> <code><a href="hidden_aliases.html">`[&lt;-`(<i>&lt;dbSpatial&gt;</i>,<i>&lt;ANY&gt;</i>,<i>&lt;ANY&gt;</i>,<i>&lt;ANY&gt;</i>)</a></code>
+
+        </dt>
+        <dd>Extract method for dbSpatial</dd>
+      </dl><dl><dt>
+
+          <code><a href="tail.html">tail(<i>&lt;dbSpatial&gt;</i>)</a></code>
+
+        </dt>
+        <dd>tail method for dbSpatial</dd>
       </dl></div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>

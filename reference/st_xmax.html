@@ -47,31 +47,41 @@ the specified <code><a href="dbSpatial.html">dbSpatial</a></code> object.</p>
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">st_xmax</span><span class="op">(</span><span class="va">tbl</span>, geomName <span class="op">=</span> <span class="st">"geom"</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">st_xmax</span><span class="op">(</span><span class="va">dbSpatial</span>, geomName <span class="op">=</span> <span class="st">"geom"</span>, <span class="va">...</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># S4 method for class 'dbSpatial'</span></span>
+<span><span class="fu">st_xmax</span><span class="op">(</span><span class="va">dbSpatial</span>, geomName <span class="op">=</span> <span class="st">"geom"</span>, <span class="va">...</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div class="section level2">
     <h2 id="arguments">Arguments<a class="anchor" aria-label="anchor" href="#arguments"></a></h2>
 
 
-<dl><dt id="arg-tbl">tbl<a class="anchor" aria-label="anchor" href="#arg-tbl"></a></dt>
-<dd><p>name of a table in a duckdb database</p></dd>
+<dl><dt id="arg-geomname">geomName<a class="anchor" aria-label="anchor" href="#arg-geomname"></a></dt>
+<dd><p><code>character string</code>. The geometry column name in the  <code><a href="dbSpatial.html">dbSpatial</a></code>  object. Default: <code>"geom"</code>.</p></dd>
 
 
-<dt id="arg-geomname">geomName<a class="anchor" aria-label="anchor" href="#arg-geomname"></a></dt>
-<dd><p>name of the column containing the geometry value in the tbl
-default = "geom".</p></dd>
+<dt id="arg--">...<a class="anchor" aria-label="anchor" href="#arg--"></a></dt>
+<dd><p>additional arguments passed to methods</p></dd>
+
+
+<dt id="arg-dbspatial"><code><a href="dbSpatial.html">dbSpatial</a></code><a class="anchor" aria-label="anchor" href="#arg-dbspatial"></a></dt>
+<dd><p>object</p></dd>
 
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>numerical vector in database</p>
+    <p>numerical column vector in database</p>
     </div>
     <div class="section level2">
+    <h2 id="functions">Functions<a class="anchor" aria-label="anchor" href="#functions"></a></h2>
+
+<ul><li><p><code>st_xmax(dbSpatial)</code>: Method for <code>dbSpatial</code> object</p></li>
+</ul></div>
+    <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
-    <div class="dont-index"><p>Other geom_solo:
-<code><a href="st_geometrytype.html">st_geometrytype</a>()</code>,
-<code><a href="st_isvalid.html">st_isvalid</a>()</code>,
+    <div class="dont-index"><p>Other geom_summary:
+<code><a href="st_extent.html">st_extent</a>()</code>,
 <code><a href="st_ymax.html">st_ymax</a>()</code></p></div>
     </div>
 
@@ -94,15 +104,13 @@ default = "geom".</p></dd>
 <span class="r-in"><span>                      y_colName <span class="op">=</span> <span class="st">"y"</span>,</span></span>
 <span class="r-in"><span>                      name <span class="op">=</span> <span class="st">"foo"</span>,</span></span>
 <span class="r-in"><span>                      overwrite <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="fu"><a href="st_extent.html">st_extent</a></span><span class="op">(</span>dbSpatial <span class="op">=</span> <span class="va">db_points</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> xmin xmax ymin ymax </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  100  300  500  700 </span>
 <span class="r-in"><span>                      </span></span>
-<span class="r-in"><span><span class="fu">st_xmax</span><span class="op">(</span>tbl <span class="op">=</span> <span class="va">db_points</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># Source:   SQL [3 x 1]</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># Database: DuckDB v1.0.0 [unknown@Linux 6.5.0-1023-azure:R 4.4.1/:memory:]</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    geom</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span>   100</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span>   200</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span>   300</span>
+<span class="r-in"><span><span class="fu">st_xmax</span><span class="op">(</span>dbSpatial <span class="op">=</span> <span class="va">db_points</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 300</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
