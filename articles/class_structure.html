@@ -44,6 +44,7 @@
 <li class="nav-item"><form class="form-inline" role="search">
  <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="../search.json">
 </form></li>
+<li class="nav-item"><a class="external-link nav-link" href="https://github.com/drieslab/dbSpatial" aria-label="GitHub"><span class="fa fab fa-github"></span></a></li>
 <li class="nav-item dropdown">
   <button class="nav-link dropdown-toggle" type="button" id="dropdown-lightswitch" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true" aria-label="Light switch"><span class="fa fa-sun"></span></button>
   <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown-lightswitch">
@@ -82,14 +83,13 @@ geometries in a DuckDB table. The package builds on the <a href="https://duckdb.
 extension</a>.</p>
 <p><code>dbSpatial</code> objects adopt the S4 class system and
 represent spatial <code>geometries</code> in a DuckDB table. The
-<a href="https://drieslab.github.io/dbSpatial/">dbSpatial</a> package provides methods for constructing
+<a href="https://drieslab.github.io/dbSpatial/">dbSpatial</a> package consists of methods for constructing
 <code>dbSpatial</code> objects from various data sources, as well as
 various spatial operations for working with these data.</p>
-<p>Of particular importance to <code>dbSpatial</code> is being able to
-work with diverse data sources. The package provides methods for
-reading/writing <code>dbSpatial</code> objects from/to data.frames, S3
-and S4 spatial-related objects (e.g. objects from <a href="https://r-spatial.github.io/sf/" class="external-link">sf</a> or
-<code>{terra})</code>, and <a href="https://duckdb.org/docs/extensions/spatial.html#st_read--read-spatial-data-from-files" class="external-link">several
+<p><code>dbSpatial</code> provides methods for reading/writing
+<code>dbSpatial</code> objects from/to data.frames, S3 and S4
+spatial-related objects (e.g. objects from <a href="https://r-spatial.github.io/sf/" class="external-link">sf</a> or
+<a href="https://rspatial.org/" class="external-link">terra</a>), and <a href="https://duckdb.org/docs/extensions/spatial.html#st_read--read-spatial-data-from-files" class="external-link">several
 other spatial files</a> that are supported by the DuckDB spatial
 extension.</p>
 <p><a href="https://mermaid.live/edit#pako:eNp9U-9r2zAQ_VeEPu2Hq0WzYreiDAqFfRqMpmwwDOFsyYlaWQqSPJaZ_O-TnTSN1jb6cr73jnfHu_OAGysk5rjR4P2tgpWDrjKVMdBJv4FGotub-xs0jBiKb6pDkQkK9LJVWvphz4zvIyJ-vUnylbQP3poEI2Sf7lJVtzjI2vpBNiEVDtI54Hzs_COS1r1B3oGP2Sn5VdkQLOerKX63ygR_jtfblTVJhW-jdvvqzMpcdLKzbpsMKyAAad3o4Qs4QK2f4Elsl_ot6icbtKrRcNrsSCXNGmsMR6JvHkW9HJNoj0od_w26l3xa5Sk8NuWRdM0aTiy7QIv75Yd371Hbm0nqedoxHCZObgBdE_LleT6O7iSITz-dCrIy_-_1bPHR0LNVOMOddB0oEW93cqPCYS07WWEeP4VsodehwnHWWAp9sIutaTBvQXuZ4X4TVyEP535EN2B-WRvz4Pp9ivmA_2BO53NCP5c5ZSUr2JzRywxvIzyjJC-KGWOsmFNWFMUuw38nhRkp6RWlRcnKvLzKZ3mGpVDxar8dfrcx7P4BMZQVSg" class="external-link"><img src="https://mermaid.ink/img/pako:eNp9U-9r2zAQ_VeEPu2Hq0WzYreiDAqFfRqMpmwwDOFsyYlaWQqSPJaZ_O-TnTSN1jb6cr73jnfHu_OAGysk5rjR4P2tgpWDrjKVMdBJv4FGotub-xs0jBiKb6pDkQkK9LJVWvphz4zvIyJ-vUnylbQP3poEI2Sf7lJVtzjI2vpBNiEVDtI54Hzs_COS1r1B3oGP2Sn5VdkQLOerKX63ygR_jtfblTVJhW-jdvvqzMpcdLKzbpsMKyAAad3o4Qs4QK2f4Elsl_ot6icbtKrRcNrsSCXNGmsMR6JvHkW9HJNoj0od_w26l3xa5Sk8NuWRdM0aTiy7QIv75Yd371Hbm0nqedoxHCZObgBdE_LleT6O7iSITz-dCrIy_-_1bPHR0LNVOMOddB0oEW93cqPCYS07WWEeP4VsodehwnHWWAp9sIutaTBvQXuZ4X4TVyEP535EN2B-WRvz4Pp9ivmA_2BO53NCP5c5ZSUr2JzRywxvIzyjJC-KGWOsmFNWFMUuw38nhRkp6RWlRcnKvLzKZ3mGpVDxar8dfrcx7P4BMZQVSg?type=png" alt="’’"></a></p>
